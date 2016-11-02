@@ -14,28 +14,39 @@
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Ubuntu:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body ng-app="myApp">
 {{1+1 + 4}}
 
-<div class="container">
+<div class="container" ng-controller="displayController">
   <h1 class="intro">
     Ваш асабісты падлік тратаў.
   </h1>
   <section class="input-part">
     <div class="input-part__product-name">
       <label for="name"> Увядзіце назву прадукта</label><br>
-      <input type="text" name="product name" id="name"/>
+      <input type="text" name="product name" id="name" ng-model="name"/>
     </div>
     <div class="input-part__product-price">
       <label for="sum">Увядзіце ягоны кошт</label><br>
-      <input type="number" id="sum">
+      <input type="number" id="sum" ng-model="price">
     </div>
   </section>
+    <button class="button" ng-click="addProduct(name, price)">Add</button>
   <div class="output">
+      <div class="product-name">
+          <p ng-repeat="product in productsArray track by $index">
+              {{product}}
+          </p>
+          <p ng-repeat="price in priceArray">
+              {{price}}
+          </p>
+      </div>
 
   </div>
-  <button class="button">Add</button>
+
+
 </div>
 
   <!-- In production use:
@@ -47,5 +58,6 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+  <script src="controllers/displayController.js"></script>
 </body>
 </html>
