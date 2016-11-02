@@ -11,11 +11,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Ubuntu:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-app="myApp">
-{{1+1}}
+{{1+1 + 4}}
+
+<div class="container">
+  <h1 class="intro">
+    Ваш асабісты падлік тратаў.
+  </h1>
+  <section class="input-part">
+    <div class="input-part__product-name">
+      <label for="name"> Увядзіце назву прадукта</label><br>
+      <input type="text" name="product name" id="name"/>
+    </div>
+    <div class="input-part__product-price">
+      <label for="sum">Увядзіце ягоны кошт</label><br>
+      <input type="number" id="sum">
+    </div>
+  </section>
+  <div class="output">
+
+  </div>
+  <button class="button">Add</button>
+</div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
