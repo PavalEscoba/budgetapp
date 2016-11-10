@@ -1,1 +1,1 @@
-App is not READY yet.
+Actually App is ready.
