@@ -1,24 +1,32 @@
+@font-face {
+  font-family: 'Comfortaa';
+  src: url("../fonts/Comfortaa/Comfortaa-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf"); }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box; }
 
 body {
-  font-family: "Comfortaa";
-  background-color: lightyellow;
-  color: lightgoldenrodyellow; }
+  font-family: "Comfortaa", sans-serif;
+  color: #800517;
+  background: url("../img/bg-light.png"); }
 
 .container {
-  width: 800px;
+  width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background: url("../img/bg.png");
   text-align: center; }
 
 .input-part {
   text-align: left;
   font-family: "Ubuntu", sans-serif;
-  padding: 50px; }
+  padding: 50px;
+  border-bottom: 1px; }
   .input-part::after {
     content: '';
     clear: both;
@@ -26,11 +34,11 @@ body {
 
 .input-part__product-name {
   float: left;
-  margin-left: 50px; }
+  margin-left: 60px; }
 
 .input-part__product-price {
-  float: left;
-  margin-left: 150px;
+  float: right;
+  margin-right: 75px;
   text-align: center; }
 
 input {
@@ -58,3 +66,23 @@ button:hover {
   background-color: rgba(126, 88, 126, 0.8);
   color: gold;
   box-shadow: 0 0 10px 1px black; }
+
+.product-output {
+  margin-top: 50px; }
+
+.product-output__name {
+  display: inline-block;
+  margin-right: 20px; }
+
+.product-output__price {
+  display: inline-block; }
+
+.product-output__name-item {
+  border-bottom: 1px solid #800517; }
+
+.product-output__price-item {
+  border-bottom: 1px solid #800517; }
+
+table {
+  margin: 50px auto;
+  width: 600px; }

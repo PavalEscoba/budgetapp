@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="css/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Ubuntu:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+ <!-- <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Ubuntu:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">-->
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
@@ -26,25 +26,29 @@
   <section class="input-part">
     <div class="input-part__product-name">
       <label for="name"> Увядзіце назву прадукта</label><br>
-      <input type="text" name="product name" id="name" ng-model="name"/>
+      <input type="text" name="product name" id="name" ng-model="name" placeholder="Які прадукт вы набылі?"/>
     </div>
     <div class="input-part__product-price">
       <label for="sum">Увядзіце ягоны кошт</label><br>
-      <input type="number" id="sum" ng-model="price">
+      <input type="number" id="sum" ng-model="price" placeholder="Цана?">
     </div>
   </section>
     <button class="button" ng-click="addProduct(name, price)">Add</button>
-  <div class="output">
-      <div class="product-name">
-          <p ng-repeat="product in productsArray track by $index">
-              {{product}}
-          </p>
-          <p ng-repeat="price in priceArray">
-              {{price}}
-          </p>
-      </div>
 
-  </div>
+  <table border="1px">
+    <tr>
+      <th>№</th>
+      <th>Назва</th>
+      <th>Кошт</th>
+      <th>$</th>
+    </tr>
+    <tr ng-repeat="product in products  track by $index">
+        <td>{{$index + 1}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price | belCurrencyFilter}}</td>
+        <td>{{product.price | currencyFilter}}</td>
+    </tr>
+  </table>
 
 
 </div>

@@ -7,7 +7,7 @@ gulp.task('sass', function () {
     return gulp.src('app/sass/**/*.scss')
         .pipe(sass())
         .pipe(gulp.dest('app/css'))
-        /* .pipe(browserSync.reload({stream:true})) */
+         .pipe(browserSync.reload({stream:true}))
 });
 gulp.task('browser-sync', function(){
     browserSync({

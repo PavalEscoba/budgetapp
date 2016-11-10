@@ -4,10 +4,51 @@
 var app = angular.module('myApp');
 
 app.controller("displayController", function ($scope) {
-    $scope.productsArray = ['apple','banana','car'];
-    $scope.priceArray = ['4','3','220']
+    function isNumeric(n){
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+    $scope.products =[];
     $scope.addProduct = function (item, num) {
-        $scope.productsArray.push(item);
-        $scope.priceArray.push(num);
+        var addedProduct = {};
+        
+
+        if(!isNumeric($scope.price) || $scope.price<0){
+            alert("Прадукт ня можа каштаваць меней за 0");
+            alert("Вам за яго даплочваюць?")
+        }
+        else if (item && num){
+            addedProduct.name = item;
+            addedProduct.price = num;
+            $scope.products.push(addedProduct);
+        }
+        else if (item && num == 0){
+            addedProduct.name = item;
+            addedProduct.price = 0;
+            $scope.products.push(addedProduct);
+        }
+        else if(item == 0 && num){
+            addedProduct.name = "";
+            addedProduct.price = num;
+            $scope.products.push(addedProduct);
+        }
+        else{
+            addedProduct.name = "" ;
+            addedProduct.price = "";
+        }
+        
+        $scope.name = "";
+        $scope.price = "";
+    }
+});
+app.filter("currencyFilter", function(){
+
+    return function(item){
+        var dollar = (item / 1.9).toFixed(2);
+        return dollar = "$" + dollar;
+    }
+});
+app.filter("belCurrencyFilter", function(){
+    return function(item){
+        return item + " BYN";
     }
 })
