@@ -20,13 +20,14 @@ body {
   width: 900px;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
   text-align: center; }
 
 .input-part {
-  text-align: left;
+  text-align: center;
   font-family: "Ubuntu", sans-serif;
   padding: 50px;
-  border-bottom: 1px; }
+  border-bottom: 1px solid #800517; }
   .input-part::after {
     content: '';
     clear: both;
@@ -38,8 +39,7 @@ body {
 
 .input-part__product-price {
   float: right;
-  margin-right: 75px;
-  text-align: center; }
+  margin-right: 75px; }
 
 input {
   margin-top: 10px;
@@ -50,8 +50,9 @@ input[type='number'] {
   text-align: right; }
 
 .button {
-  margin-right: 200px;
-  margin: auto;
+  float: left;
+  margin-top: 100px;
+  margin-left: 50px;
   display: block;
   width: 100px;
   min-height: 30px;
@@ -67,22 +68,11 @@ button:hover {
   color: gold;
   box-shadow: 0 0 10px 1px black; }
 
-.product-output {
-  margin-top: 50px; }
-
-.product-output__name {
-  display: inline-block;
-  margin-right: 20px; }
-
-.product-output__price {
-  display: inline-block; }
-
-.product-output__name-item {
-  border-bottom: 1px solid #800517; }
-
-.product-output__price-item {
-  border-bottom: 1px solid #800517; }
-
 table {
   margin: 50px auto;
   width: 600px; }
+
+.total {
+  position: absolute;
+  top: 250px;
+  right: 150px; }

@@ -17,13 +17,11 @@
 
 </head>
 <body ng-app="myApp">
-{{1+1 + 4}}
-
 <div class="container" ng-controller="displayController">
   <h1 class="intro">
     Ваш асабісты падлік тратаў.
   </h1>
-  <section class="input-part">
+  <form class="input-part">
     <div class="input-part__product-name">
       <label for="name"> Увядзіце назву прадукта</label><br>
       <input type="text" name="product name" id="name" ng-model="name" placeholder="Які прадукт вы набылі?"/>
@@ -32,8 +30,14 @@
       <label for="sum">Увядзіце ягоны кошт</label><br>
       <input type="number" id="sum" ng-model="price" placeholder="Цана?">
     </div>
-  </section>
-    <button class="button" ng-click="addProduct(name, price)">Add</button>
+    <div>
+      <button class="button" ng-click="addProduct(name, price)">Add</button>
+    </div>
+  </form>
+<div class="total">
+  <p>{{total | belCurrencyFilter}}</p>
+  <p>{{total | currency}}</p>
+</div>
 
   <table border="1px">
     <tr>

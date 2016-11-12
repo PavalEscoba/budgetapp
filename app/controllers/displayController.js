@@ -8,10 +8,10 @@ app.controller("displayController", function ($scope) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
     $scope.products =[];
+    $scope.total = 0;
     $scope.addProduct = function (item, num) {
         var addedProduct = {};
-        
-
+        var total = 0;
         if(!isNumeric($scope.price) || $scope.price<0){
             alert("Прадукт ня можа каштаваць меней за 0");
             alert("Вам за яго даплочваюць?")
@@ -34,12 +34,14 @@ app.controller("displayController", function ($scope) {
         else{
             addedProduct.name = "" ;
             addedProduct.price = "";
-        }
+        };
+        $scope.total += $scope.price;
         
         $scope.name = "";
         $scope.price = "";
     }
 });
+
 app.filter("currencyFilter", function(){
 
     return function(item){
